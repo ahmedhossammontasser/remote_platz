@@ -1,0 +1,17 @@
+<h2>API Integration</h2>
+
+<%= form_with(controller: "apiintegration", action: "index", method: "get", local: true ) do %>
+  <%= label_tag(:email, "Check email :") %>
+  <%= text_field_tag(:email) %>
+  <%= submit_tag("check") %>
+<% end %>
+
+	Result for EMAIL = <%= @email %>
+	<br>
+	<% if @status == false  %>
+		Error code = <%= @code %>
+		<br>
+		Message = <%= @message %>
+	<% else %>
+		SMTP Check = <%= @message %>
+	<% end %>
